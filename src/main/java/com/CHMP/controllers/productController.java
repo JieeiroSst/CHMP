@@ -10,6 +10,7 @@ import com.CHMP.DTO.product;
 import com.CHMP.services.productService;
 
 @Controller
+@RequestMapping("CHMP")
 public class productController {
     @Autowired
     private productService service;

@@ -10,6 +10,7 @@ import com.CHMP.DTO.orderLine;
 import com.CHMP.services.orderLineService;
 
 @Controller
+@RequestMapping("CHMP")
 public class orderLineController {
     @Autowired
     private orderLineService service;
