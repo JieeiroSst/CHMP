@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new order detail</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Create order detail</h1>
+<br/>
+<br/>
+<div class="example">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <form action="#" th:action="@{/save}" th:object="${orderDetail}" method="post">
+                        <table border="0" cellpadding="10">
+                            <tr>
+                                <td>Data booking</td>
+                                <td><input type="text" th:field="*{booking}" /></td>
+                            </tr>
+                            <tr>
+                                <td>customerID</td>
+                                <td th:each="c:${customer}">
+                                    <select th:field="*{c.id}"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="submit">Save</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

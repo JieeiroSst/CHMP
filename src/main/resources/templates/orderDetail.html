@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CHMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Danh sách</h1>
+<div class="example">
+    <div class="container">
+        <div class="row">
+            <h2>Table Reponsive</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Booking</th>
+                            <th>Customer ID</th>>
+                            <th>Hoạt Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active" th:each="order:${orderDetails}">
+                            <td th:text="${order.id}">1</td>
+                            <td th:text="${order.booking}"></td>
+                            <td th:text="${order.customerID}">Nam</td>
+                            <td scope="row">
+                                <a th:href="@{'/CHMP/orderDetail/edit/'+${order.id}}">Edit</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a th:href="@{'/CHMP/orderDetail/delete/'+${order.id}}">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

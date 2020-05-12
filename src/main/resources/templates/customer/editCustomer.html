@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:score="http://thymeleafexamples">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit product</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Edit customer</h1>
+<br/>
+<div class="example">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <form action="#" th:action="@{/save}" th:object="${customer}" method="post">
+                        <table border="0" cellpadding="10">
+                            <tr>
+                                <td>ID</td>
+                                <td><input type="text" th:field="*{id}" /></td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td><input type="text" th:field="*{name}" /></td>
+                            </tr>
+                            <tr>
+                                <td>CustomerSice</td>
+                                <td><input type="date" th:field="*{customerSice}" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="submit">Save</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
